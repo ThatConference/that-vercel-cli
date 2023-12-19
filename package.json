@@ -1,0 +1,31 @@
+{
+  "name": "that-vercel-cli",
+  "version": "0.1.0",
+  "description": "Custom cli for interacting with the Vercel API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vercel",
+    "cli",
+    "deployments"
+  ],
+  "author": "THAT Labs",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "debug": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "fetch-retry": "^5.0.6",
+    "node-fetch": "^3.3.2",
+    "pino": "^8.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#0a0a0a",
+    "titleBar.inactiveBackground": "#070707",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#a9a9a9e5",
+    "statusBar.background": "#444444",
+    "statusBarItem.hoverBackground": "#6c59ff",
+    "statusBar.foreground": "#dbedff"
+  }
+}
