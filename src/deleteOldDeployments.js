@@ -20,7 +20,7 @@ async function callVercelDeleteBatch(_deployments) {
         setTimeout(async () => {
           const t = await deleteDeployment(deploymentId);
           resolve(t);
-        }, 500 * i),
+        }, appConfig.vercel.deleteRequestDelay * i),
       );
 
       deleteFunctions.push(fn);
@@ -86,7 +86,9 @@ export async function deleteOldDeployments() {
     }
     until = next; // next value to use to fetch deployments
     // delay to avoid rate limit
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    await new Promise(resolve =>
+      setTimeout(resolve, appConfig.vercel.nextDeploymentFetchDelay),
+    );
   }
 
   childlogger.info({ fetchedDeploys }, 'deleteOldDeployments done');

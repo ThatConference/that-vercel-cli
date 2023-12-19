@@ -42,7 +42,7 @@ export function fetchDeployments(beforeEpoch) {
   dlog('fetch deployments called');
   // fetching default, 20 records
   const q = new URLSearchParams();
-  q.append('limit', 10);
+  q.append('limit', appConfig.vercel.fetchDeploymentLimit);
   if (beforeEpoch && Number.isInteger(beforeEpoch)) {
     q.append('until', beforeEpoch);
   }
