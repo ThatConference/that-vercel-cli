@@ -1,6 +1,6 @@
 {
   "name": "that-vercel-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Custom cli for interacting with the Vercel API",
   "main": "index.js",
   "type": "module",

@@ -21,13 +21,13 @@ There are two places to configure the application
 
 ### Vercel Rate Limiting
 
-Vercel rate limit information can be found here, (https://vercel.com/docs/limits/overview#rate-limits)[https://vercel.com/docs/limits/overview#rate-limits]. Vercel doesn't explicitly list a limit for deployment deletes, but, through testing, it appears to be similar to Domain Deletion, which is 60 ever 60 seconds.
+Vercel rate limit information can be found here, [https://vercel.com/docs/limits/overview#rate-limits](https://vercel.com/docs/limits/overview#rate-limits). Vercel doesn't explicitly list a limit for deployment deletes, but, through testing, it appears to be similar to Domain Deletion, which is 60 ever 60 seconds. It also seems a rate limit is activated after 200 deletes regardless of request rate 😞.
 
 To avoid hitting the limit the setting should be around:
 
 - `appConfig.vercel.fetchDeploymentLimit`: 30
 - `appConfig.vercel.deleteRequestDelay`: 1000
-- `appConfig.vercel.nextDeploymentFetchDelay`: 1000
+- `appConfig.vercel.nextDeploymentFetchDelay`: 3000
   
 ## Executing the script
 

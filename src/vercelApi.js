@@ -9,7 +9,7 @@ const dlog = debug('that:vercel-cli:vercel-api');
 // vercel rate limits:
 // https://vercel.com/docs/limits/overview#rate-limits
 const fetch = fetchRetry(nodeFetch, {
-  retries: 5,
+  // retries: 5,
   retryDelay: (attempt, error, response) => {
     if (response?.status === 429) {
       dlog('retry on 429, attempt # %d', attempt);
@@ -24,7 +24,10 @@ const fetch = fetchRetry(nodeFetch, {
     return 2000 * (attempt + 1);
   },
   retryOn: (attempt, error, response) => {
-    if (response?.status === 429 || response?.status >= 500 || error) {
+    if (
+      (response?.status === 429 || response?.status >= 500 || error) &&
+      attempt < 5
+    ) {
       return true;
     }
     return false;
